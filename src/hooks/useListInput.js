@@ -15,6 +15,6 @@ export function useListInput(arr) {
         reset();
 
     }
-    return [list, input, onInput, addInput, removeInput]
+    return [list, input, onInput, addInput, removeInput, remove];
 
 }

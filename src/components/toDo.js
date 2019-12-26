@@ -2,7 +2,7 @@ import React from 'react';
 import {useListInput} from '../hooks/useListInput';
 
 function ToDo() {
- const [list, input, onInput, addInput, removeInput] = useListInput([])
+ const [list, input, onInput, addInput, removeInput, remove] = useListInput(['1','2','3','4'])
 
   return (
     <>
