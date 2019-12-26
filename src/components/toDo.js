@@ -2,12 +2,12 @@ import React from 'react';
 import {useListInput} from '../hooks/useListInput';
 
 function ToDo() {
- const [list, input, onInput, addInput, removeInput, remove] = useListInput(['1','2','3','4'])
+ const [list, input, onInput, addInput, removeInput, removeByIndex] = useListInput(['1','2','3','4'])
 
   return (
     <>
     <h1>Lista de tareas:</h1>
-    {list && list.map(item => <li>{item}</li>)} 
+    {list && list.map((item, index) => <li>{item}<button onClick={() => removeByIndex(index)}>X</button></li>)} 
     <form>
       <label>Qué hacer?</label>
       <input  onChange={event => onInput(event)

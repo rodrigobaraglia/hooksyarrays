@@ -13,11 +13,16 @@ export function useList(arr) {
 /*'remove' busca el índice del item elegido, crea un nuevo array que filtra 
 el item segun su índice y luego reemplaza el estado actual de list con el 
 nuevo array*/
-    function remove(item) {
-        const target = list.findIndex(x => x == item );
-        const newList = list.filter((x, i) => i != target);
+  
+    function removeByIndex(index) {
+        const newList = list.filter((x, i) => i != index);
         setList(newList);
     }
+
+    function removeByContent(item) {
+        const target = list.findIndex(x => x == item );
+        removeByIndex(target)
+    }
     
-    return [list, add, remove];
+    return [list, add, removeByIndex, removeByContent];
 } 
